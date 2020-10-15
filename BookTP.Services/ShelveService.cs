@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BookTP.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookTP.Services
 {
@@ -14,17 +16,17 @@ namespace BookTP.Services
             _context = context;
         }
 
-        public Task AddEntity(object entity)
+        public Task AddEntity(Shelve entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<object>> GetAll()
+        public async Task<List<Shelve>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Shelves.ToListAsync();
         }
 
-        public Task<object> GetById(Guid id)
+        public Task<Shelve> GetById(Guid id)
         {
             throw new NotImplementedException();
         }

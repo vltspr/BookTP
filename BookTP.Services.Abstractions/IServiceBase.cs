@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BookTP.Models;
 
 namespace BookTP.Services.Abstractions
 {
-    public interface IServiceBase
+    public interface IServiceBase<T>
     {
-        Task<List<object>> GetAll();
-        Task<object> GetById(Guid id);
-        Task AddEntity(object entity);
+        Task<List<T>> GetAll();
+        Task<T> GetById(Guid id);
+        Task AddEntity(T entity);
     }
 }
