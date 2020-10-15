@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTP", "BookTP\BookTP.csproj", "{4267209F-A5AB-43B1-AFAD-029CEE07BF7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookTP", "BookTP\BookTP.csproj", "{4267209F-A5AB-43B1-AFAD-029CEE07BF7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTP.Services.Abstractions", "BookTP.Services.Abstractions\BookTP.Services.Abstractions.csproj", "{6E674206-1F10-4D97-A29F-02EDDAC4BC41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4267209F-A5AB-43B1-AFAD-029CEE07BF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4267209F-A5AB-43B1-AFAD-029CEE07BF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4267209F-A5AB-43B1-AFAD-029CEE07BF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E674206-1F10-4D97-A29F-02EDDAC4BC41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E674206-1F10-4D97-A29F-02EDDAC4BC41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E674206-1F10-4D97-A29F-02EDDAC4BC41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E674206-1F10-4D97-A29F-02EDDAC4BC41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
