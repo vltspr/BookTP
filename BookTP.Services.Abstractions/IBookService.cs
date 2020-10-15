@@ -1,6 +1,8 @@
-﻿namespace BookTP.Services
+﻿using BookTP.Services.Abstractions;
+
+namespace BookTP.Services
 {
-    interface IBookService
+    public interface IBookService : IServiceBase
     {
     }
 }

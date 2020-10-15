@@ -5,10 +5,10 @@ using BookTP.Models;
 
 namespace BookTP.Services.Abstractions
 {
-    interface IServiceBase
+    public interface IServiceBase
     {
-        Task<List<Shelve>> GetAll();
-        Task<Shelve> GetById(Guid id);
+        Task<List<object>> GetAll();
+        Task<object> GetById(Guid id);
         Task AddEntity(object entity);
     }
 }
