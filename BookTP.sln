@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTP.Services", "BookTP.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTP.Models", "BookTP.Models\BookTP.Models.csproj", "{236D702B-0793-466A-A203-8B16385C8899}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTP.DatabaseAccess", "BookTP.DatabaseAccess\BookTP.DatabaseAccess.csproj", "{2A700EAC-21DF-485A-9A6C-2414B8FCC117}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{236D702B-0793-466A-A203-8B16385C8899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{236D702B-0793-466A-A203-8B16385C8899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{236D702B-0793-466A-A203-8B16385C8899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A700EAC-21DF-485A-9A6C-2414B8FCC117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A700EAC-21DF-485A-9A6C-2414B8FCC117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A700EAC-21DF-485A-9A6C-2414B8FCC117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A700EAC-21DF-485A-9A6C-2414B8FCC117}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

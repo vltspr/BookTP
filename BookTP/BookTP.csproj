@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -10,10 +10,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.0-rc2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BookTP.DatabaseAccess\BookTP.DatabaseAccess.csproj" />
     <ProjectReference Include="..\BookTP.Services.Abstractions\BookTP.Services.Abstractions.csproj" />
     <ProjectReference Include="..\BookTP.Services\BookTP.Services.csproj" />
   </ItemGroup>

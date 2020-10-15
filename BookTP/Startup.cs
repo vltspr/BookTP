@@ -21,7 +21,7 @@ namespace BookTP
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BookDbContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("BookDbContext")));
+                options.UseNpgsql("Host=localhost;Database=BookTP;Username=postgres;Password=neobank"));
 
             services.AddSingleton<IBookService, BookService>();
 

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using BookTP.Services.Abstractions;
 
 namespace BookTP.Services
 {
-    public class ShelveService : IServiceBase
+    public class ShelveService : IShelveService
     {
         private readonly BookDbContext _context;
 
@@ -14,6 +13,7 @@ namespace BookTP.Services
         {
             _context = context;
         }
+
         public Task AddEntity(object entity)
         {
             throw new NotImplementedException();

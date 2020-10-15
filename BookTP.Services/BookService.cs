@@ -13,6 +13,7 @@ namespace BookTP.Services
         {
             _context = context;
         }
+
         public Task AddEntity(object entity)
         {
             throw new NotImplementedException();
