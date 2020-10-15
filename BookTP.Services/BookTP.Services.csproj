@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BookTP.DatabaseAccess\BookTP.DatabaseAccess.csproj" />
     <ProjectReference Include="..\BookTP.Models\BookTP.Models.csproj" />
     <ProjectReference Include="..\BookTP.Services.Abstractions\BookTP.Services.Abstractions.csproj" />

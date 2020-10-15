@@ -23,5 +23,12 @@ namespace BookTP.Controllers
         {
             return await _bookService.GetAll();
         }
+
+        // GET: /Book/title/author
+        [HttpGet("query")]
+        public async Task<ActionResult<IEnumerable<Book>>> QueryBooks(string title, string author = "", int howManyToSave = 0)
+        {
+            return await _bookService.QueryBooks(title, author, howManyToSave);
+        }
     }
 }

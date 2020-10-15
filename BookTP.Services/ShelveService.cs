@@ -17,9 +17,9 @@ namespace BookTP.Services
             _context = context;
         }
 
-        public async Task AddEntity(Shelve entity)
+        public void AddEntity(Shelve entity)
         {
-            await _context.Shelves.AddAsync(entity);
+            _context.Shelves.Add(entity);
         }
 
         public async Task<List<Shelve>> GetAll()

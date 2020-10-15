@@ -9,6 +9,6 @@ namespace BookTP.Services.Abstractions
     {
         Task<List<T>> GetAll();
         Task<T> GetById(Guid id);
-        Task AddEntity(T entity);
+        void AddEntity(T entity);
     }
 }
