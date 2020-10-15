@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using BookTP.Services;
 
 namespace BookTP
 {
@@ -21,6 +22,8 @@ namespace BookTP
         {
             services.AddDbContext<BookDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("BookDbContext")));
+
+            services.AddSingleton<IBookService, BookService>();
 
             services.AddControllers();
         }
