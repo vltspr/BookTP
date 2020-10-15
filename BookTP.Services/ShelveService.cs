@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BookTP.Models;
 using Microsoft.EntityFrameworkCore;
@@ -16,9 +17,9 @@ namespace BookTP.Services
             _context = context;
         }
 
-        public Task AddEntity(Shelve entity)
+        public async Task AddEntity(Shelve entity)
         {
-            throw new NotImplementedException();
+            await _context.Shelves.AddAsync(entity);
         }
 
         public async Task<List<Shelve>> GetAll()
@@ -26,9 +27,9 @@ namespace BookTP.Services
             return await _context.Shelves.ToListAsync();
         }
 
-        public Task<Shelve> GetById(Guid id)
+        public async Task<Shelve> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return await _context.Shelves.Where(s => s.Id == id).SingleOrDefaultAsync();
         }
     }
 }

@@ -23,7 +23,8 @@ namespace BookTP
             services.AddDbContext<BookDbContext>(options =>
                 options.UseNpgsql("Host=localhost;Database=BookTP;Username=postgres;Password=neobank"));
 
-            services.AddSingleton<IBookService, BookService>();
+            services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IShelveService, ShelveService>();
 
             services.AddControllers();
         }
