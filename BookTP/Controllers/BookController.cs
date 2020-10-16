@@ -46,5 +46,13 @@ namespace BookTP.Controllers
         {
             return await _bookService.QueryBooks(title, author, howManyToSave, shelveId);
         }
+
+        // GET: /Book/search
+        [HttpGet("search")]
+        public ActionResult<IEnumerable<Book>> SearchTitle(
+            string title)
+        {
+            return _bookService.SearchBook(title);
+        }
     }
 }
