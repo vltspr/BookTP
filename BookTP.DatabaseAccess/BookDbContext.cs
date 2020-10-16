@@ -1,5 +1,6 @@
 ﻿using BookTP.Models;
 using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Extensions;
 
 namespace BookTP
 {
@@ -12,6 +13,14 @@ namespace BookTP
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseNpgsql("Host=localhost;Database=BookTP;Username=postgres;Password=neobank");
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>()
+                .HasIndex(p => p.SearchVector)
+                .HasMethod("GIN");
+        }
+
 
         public DbSet<Book> Books { get; set; }
 

@@ -25,6 +25,20 @@ namespace BookTP.Controllers
             return await _shelveService.GetAll();
         }
 
+        // GET: /Shelve
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Shelve>> GetShelveById(Guid id)
+        {
+            return await _shelveService.GetById(id);
+        }
+
+        // GET: /Shelve
+        [HttpGet("bybook/{bookid}")]
+        public async Task<ActionResult<Shelve>> GetShelveByBookId(Guid bookid)
+        {
+            return await _shelveService.GetByBookId(bookid);
+        }
+
         // POST: /Shelve
         [HttpPost]
         public ActionResult CreateShelve(string name)

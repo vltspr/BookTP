@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using NpgsqlTypes;
 
 namespace BookTP.Models
 {
@@ -31,6 +33,6 @@ namespace BookTP.Models
 
         public string InfoLink { get; set; }
 
-        public Guid ShelveId { get; set; }
+        public NpgsqlTsVector SearchVector { get; set; }
     }
 }

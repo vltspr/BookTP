@@ -79,6 +79,8 @@ namespace BookTP.Services
         public async Task<List<Book>> QueryBooks(string title, string author, int howManyToSave, Guid shelveId)
         {
             List<Book> books = new List<Book>();
+            var shelve = _context.Shelves.Where(s => s.Id == shelveId).SingleOrDefault();
+            shelve.Books = new List<Book>();
             HttpResponseMessage response = await _httpClient.GetAsync(BuildUri(title, author));
             if (response.IsSuccessStatusCode)
             {
@@ -92,7 +94,7 @@ namespace BookTP.Services
                     {
                         var newBook = results[i]["volumeInfo"].ToObject<Book>();
                         newBook.Id = Guid.NewGuid();
-                        newBook.ShelveId = shelveId;
+                        shelve.Books.Add(newBook);
                         books.Add(newBook);
                         AddEntity(newBook);
                     }
@@ -103,7 +105,7 @@ namespace BookTP.Services
                     {
                         var newBook = result["volumeInfo"].ToObject<Book>();
                         newBook.Id = Guid.NewGuid();
-                        newBook.ShelveId = shelveId;
+                        shelve.Books.Add(newBook);
                         books.Add(newBook);
                         AddEntity(newBook);
                     }
@@ -125,6 +127,12 @@ namespace BookTP.Services
             }
             builder.Query = query.ToString().Replace("inauthor=", "inauthor:");
             return builder.ToString();
+        }
+
+        public List<Book> SearchBook(string title)
+        {
+            var books = _context.Books.Where(p => p.SearchVector.Matches(title));
+            return books.Take(10).ToList();
         }
     }
 }

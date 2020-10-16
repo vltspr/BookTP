@@ -10,5 +10,6 @@ namespace BookTP.Services
     {
         Task<List<Book>> QueryBooks(string title, string author, int howManyToSave, Guid shelveId);
         Task<List<Book>> QueryBooks(string title, string author, int howManyToSave);
+        List<Book> SearchBook(string title);
     }
 }
