@@ -30,5 +30,7 @@ namespace BookTP.Models
         public string PreviewLink { get; set; }
 
         public string InfoLink { get; set; }
+
+        public Guid ShelveId { get; set; }
     }
 }

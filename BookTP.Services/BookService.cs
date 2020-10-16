@@ -76,6 +76,44 @@ namespace BookTP.Services
             return books;
         }
 
+        public async Task<List<Book>> QueryBooks(string title, string author, int howManyToSave, Guid shelveId)
+        {
+            List<Book> books = new List<Book>();
+            HttpResponseMessage response = await _httpClient.GetAsync(BuildUri(title, author));
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                JObject jsonObject = JObject.Parse(jsonString);
+                List<JToken> results = jsonObject["items"].Children().ToList();
+
+                if (howManyToSave > 0)
+                {
+                    for (int i = 0; i < howManyToSave; i++)
+                    {
+                        var newBook = results[i]["volumeInfo"].ToObject<Book>();
+                        newBook.Id = Guid.NewGuid();
+                        newBook.ShelveId = shelveId;
+                        books.Add(newBook);
+                        AddEntity(newBook);
+                    }
+                }
+                else
+                {
+                    foreach (var result in results)
+                    {
+                        var newBook = result["volumeInfo"].ToObject<Book>();
+                        newBook.Id = Guid.NewGuid();
+                        newBook.ShelveId = shelveId;
+                        books.Add(newBook);
+                        AddEntity(newBook);
+                    }
+                }
+            }
+
+            _context.SaveChanges();
+            return books;
+        }
+
         private string BuildUri(string title, string author)
         {
             UriBuilder builder = new UriBuilder(API_URL);

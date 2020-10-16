@@ -20,6 +20,7 @@ namespace BookTP.Services
         public void AddEntity(Shelve entity)
         {
             _context.Shelves.Add(entity);
+            _context.SaveChanges();
         }
 
         public async Task<List<Shelve>> GetAll()
